@@ -15,7 +15,7 @@ const mutations = {
 };
 
 const actions = {
-  async fetchEvent({ commit }) {
+  async fetchEvents({ commit }) {
     const response = await axios.get(`${apiUrl}/events`);
     commit("setEvents", response.data);
   },

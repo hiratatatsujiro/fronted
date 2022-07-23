@@ -1,20 +1,14 @@
 <template>
   <div>
-    <h1>Calender</h1>
-    <ul>
-      <li v-for="event in events" :key="event.id">
-        {{ event.name }}
-      </li>
-    </ul>
-    <button type="submit" @click="fetchEvents()">fetchEvents</button>
-
-    <CalendarDetails />
+    <v-sheet height="100vh">
+      <Calendar />
+    </v-sheet>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from "vuex";
-import CalendarDetails from "./CalendarDetails.vue";
+
 export default {
   name: "CalenderPage",
   computed: {
@@ -23,7 +17,6 @@ export default {
   methods: {
     ...mapActions("events", ["fetchEvents"]),
   },
-  components: { CalendarDetails },
 };
 </script>
 
